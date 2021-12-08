@@ -1,53 +1,48 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { FilmesModule } from './filmes/filmes.module';
-import { CadastroFilmesComponent } from './filmes/cadastro-filmes/cadastro-filmes.component';
-import { ListagemFilmesComponent } from './filmes/listagem-filmes/listagem-filmes.component';
-import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { FilmesModule } from "./filmes/filmes.module";
+import { CadastroFilmesComponent } from "./filmes/cadastro-filmes/cadastro-filmes.component";
+import { ListagemFilmesComponent } from "./filmes/listagem-filmes/listagem-filmes.component";
+import { VisualizarFilmesComponent } from "./filmes/visualizar-filmes/visualizar-filmes.component";
 
 const routes: Routes = [
-
   {
-      path: '',
-      redirectTo: 'filmes',
-      pathMatch: 'full'
+    path: "",
+    redirectTo: "filmes",
+    pathMatch: "full",
   },
   {
-    path: 'filmes',
+    path: "filmes",
     children: [
       {
-        path: '',
-        component: ListagemFilmesComponent
+        path: "",
+        component: ListagemFilmesComponent,
       },
       {
-        path: 'cadastro',
+        path: "cadastro",
         children: [
           {
-            path: '',
-            component: CadastroFilmesComponent
+            path: "",
+            component: CadastroFilmesComponent,
           },
           {
-            path: ':id',
-            component: CadastroFilmesComponent
-          }
-        ]
+            path: ":id",
+            component: CadastroFilmesComponent,
+          },
+        ],
       },
       {
-        path: ':id',
+        path: ":id",
         component: VisualizarFilmesComponent,
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: "full",
+      },
+    ],
   },
-  { path: '**', redirectTo: 'filmes' },
-
+  { path: "**", redirectTo: "filmes" },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    FilmesModule
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), FilmesModule],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,15 +1,17 @@
-import { Injectable } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import { Injectable } from "@angular/core";
+import { AbstractControl } from "@angular/forms";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ValidarCamposService {
-
-  constructor() { }
+  constructor() {}
 
   hasErrorValidar(control: AbstractControl, errorName: string): boolean {
-    if ((control.dirty || control.touched) && this.hasError(control, errorName)) {
+    if (
+      (control.dirty || control.touched) &&
+      this.hasError(control, errorName)
+    ) {
       return true;
     }
     return false;
