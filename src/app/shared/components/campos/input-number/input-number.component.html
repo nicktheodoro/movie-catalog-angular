@@ -3,9 +3,9 @@
     <input
       matInput
       type="number"
-      min="0"
-      max="10"
-      step="0.1"
+      [min]="minimo"
+      [max]="maximo"
+      [step]="step"
       [placeholder]="titulo"
       [name]="controlName"
       [formControlName]="controlName"
@@ -14,10 +14,10 @@
       >Campo obrigatório</mat-error
     >
     <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'min')"
-      >Campo precisa ter no mínimo valor 0</mat-error
+      >Campo precisa ter no mínimo valor {{ validacao.lengthValidar(formControl, 'min') }}</mat-error
     >
     <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'max')"
-      >Campo pode ter no máximo valor 10</mat-error
+      >Campo pode ter no máximo valor {{ validacao.lengthValidar(formControl, 'max') }}</mat-error
     >
   </mat-form-field>
 </div>

@@ -2,6 +2,8 @@
 <div class="main-div">
   <mat-card class="center width50">
     <form
+      autocomplete="off"
+      novalidate
       [formGroup]="cadastro"
       (ngSubmit)="salvar()"
       (ngReset)="reiniciarForm()"
@@ -33,6 +35,7 @@
 
         <dio-input-number
           titulo="Nota IMDB"
+          step="0.1"
           controlName="nota"
           [formGroup]="cadastro"
         ></dio-input-number>
@@ -47,10 +50,9 @@
           titulo="Gênero *"
           controlName="genero"
           [formGroup]="cadastro"
+          [opcoes]="generos"
         ></dio-input-select>
-
       </mat-card-content>
-
       <mat-card-actions>
         <button type="submit" color="accent" mat-raised-button>Salvar</button>
         <button type="reset" color="warn" mat-raised-button>Cancelar</button>
