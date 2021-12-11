@@ -1,6 +1,10 @@
+import { FilmesService } from "./../../core/filmes.service";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ValidarCamposService } from "src/app/shared/components/campos/validarCampos.service";
+import { Filme } from "src/app/shared/models/filme";
+import { MatDialog } from "@angular/material";
+import { AlertaComponent } from "src/app/shared/components/alerta/alerta.component";
 
 @Component({
   selector: "dio-cadastro-filmes",
@@ -12,8 +16,10 @@ export class CadastroFilmesComponent implements OnInit {
   generos: Array<string>;
 
   constructor(
+    public dialog: MatDialog,
     public validacao: ValidarCamposService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private FilmesService: FilmesService
   ) {}
 
   get f() {
@@ -56,17 +62,30 @@ export class CadastroFilmesComponent implements OnInit {
     ];
   }
 
-  salvar(): void {
+  submit(): void {
     this.cadastro.markAllAsTouched();
 
     if (this.cadastro.invalid) {
       return;
     }
 
-    alert("SUCESSO!!\n\n" + JSON.stringify(this.cadastro.value, null, 4));
+    const filme = this.cadastro.getRawValue() as Filme;
+    this.salvar(filme);
   }
 
   reiniciarForm(): void {
     this.cadastro.reset();
+  }
+
+  private salvar(filme: Filme): void {
+    this.FilmesService.salvar(filme).subscribe(
+      () => {
+        const dialogRef = this.dialog.open(AlertaComponent);
+        this.reiniciarForm();
+      },
+      () => {
+        alert("Erro ao salvar");
+      }
+    );
   }
 }
