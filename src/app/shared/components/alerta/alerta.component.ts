@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { Alerta } from "../../models/alerta";
 
 @Component({
   selector: "dio-app-alerta",
@@ -7,26 +8,30 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
   styleUrls: ["./alerta.component.css"],
 })
 export class AlertaComponent implements OnInit {
-  titulo = "Sucesso!";
-  descricao = "Seu registro foi cadastrado.";
-  btnSucesso = "Ok";
-  btnCancelar = "Cancelar";
-  corBtn = "primary";
-  existeBtnFechar = false;
+  alerta = {
+    titulo: "Sucesso!",
+    descricao: "Seu registro foi cadastrado.",
+    btnSucesso: "Ok",
+    btnCancelar: "Cancelar",
+    corBtnSucesso: "accent",
+    corBtnCancelar: "warn",
+    existeBtnFechar: false,
+  } as Alerta
 
   constructor(
     public dialogRef: MatDialogRef<AlertaComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: Alerta
   ) {}
 
   ngOnInit(): void {
     if (this.data) {
-      this.titulo = this.data.titulo || this.titulo;
-      this.descricao = this.data.descricao || this.descricao;
-      this.btnSucesso = this.data.btnSucesso || this.btnSucesso;
-      this.btnCancelar = this.data.btnCancelar || this.btnCancelar;
-      this.corBtn = this.data.corBtn || this.corBtn;
-      this.existeBtnFechar = this.data.existeBtnFechar || this.existeBtnFechar;
+      this.alerta.titulo = this.data.titulo || this.alerta.titulo;
+      this.alerta.descricao = this.data.descricao || this.alerta.descricao;
+      this.alerta.btnSucesso = this.data.btnSucesso || this.alerta.btnSucesso;
+      this.alerta.btnCancelar = this.data.btnCancelar || this.alerta.btnCancelar;
+      this.alerta.corBtnSucesso = this.data.corBtnSucesso || this.alerta.corBtnSucesso;
+      this.alerta.corBtnCancelar = this.data.corBtnCancelar || this.alerta.corBtnCancelar;
+      this.alerta.existeBtnFechar = this.data.existeBtnFechar || this.alerta.existeBtnFechar;
     }
   }
 }

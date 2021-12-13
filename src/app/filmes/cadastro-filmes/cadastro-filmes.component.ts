@@ -5,6 +5,8 @@ import { ValidarCamposService } from "src/app/shared/components/campos/validarCa
 import { Filme } from "src/app/shared/models/filme";
 import { MatDialog } from "@angular/material";
 import { AlertaComponent } from "src/app/shared/components/alerta/alerta.component";
+import { Alerta } from "src/app/shared/models/alerta";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "dio-cadastro-filmes",
@@ -19,7 +21,8 @@ export class CadastroFilmesComponent implements OnInit {
     public dialog: MatDialog,
     public validacao: ValidarCamposService,
     private fb: FormBuilder,
-    private FilmesService: FilmesService
+    private FilmesService: FilmesService,
+    private router: Router
   ) {}
 
   get f() {
@@ -80,11 +83,34 @@ export class CadastroFilmesComponent implements OnInit {
   private salvar(filme: Filme): void {
     this.FilmesService.salvar(filme).subscribe(
       () => {
-        const dialogRef = this.dialog.open(AlertaComponent);
-        this.reiniciarForm();
+        const config = {
+          data: {
+            btnSucesso: "Ir para a listagem",
+            btnCancelar: "Cadastrar um novo filme",
+            corBtnCancelar: "primary",
+            existeBtnFechar: true,
+          } as Alerta,
+        };
+        const dialogRef = this.dialog.open(AlertaComponent, config);
+        dialogRef.afterClosed().subscribe((opcao: boolean) => {
+          if (opcao) {
+            this.router.navigateByUrl("filmes");
+          } else {
+            this.reiniciarForm();
+          }
+        });
       },
       () => {
-        alert("Erro ao salvar");
+        const config = {
+          data: {
+            titulo: "Erro",
+            descricao:
+              "Não foi possível cadastrar o seu registro, tente novamente mais tarde.",
+            btnSucesso: "Fechar",
+            corBtnSucesso: "warn",
+          } as Alerta,
+        };
+        this.dialog.open(AlertaComponent, config);
       }
     );
   }

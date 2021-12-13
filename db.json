@@ -129,26 +129,6 @@
       "urlIMDB": "https://www.imdb.com/title/tt15097216/?ref_=hm_fanfav_tt_i_5_pd_fp1",
       "genero": "Drama",
       "id": 13
-    },
-    {
-      "titulo": "teste",
-      "urlFoto": "",
-      "dtLancamento": "2021-12-11T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDB": "",
-      "genero": "Ação",
-      "id": 14
-    },
-    {
-      "titulo": "teste",
-      "urlFoto": "",
-      "dtLancamento": "2021-12-05T03:00:00.000Z",
-      "descricao": "",
-      "nota": 1,
-      "urlIMDB": "",
-      "genero": "Aventura",
-      "id": 15
     }
   ]
 }
