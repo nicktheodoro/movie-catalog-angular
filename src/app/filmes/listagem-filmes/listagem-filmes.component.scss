@@ -9,7 +9,15 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+.mat-card-image {
+  width: auto;
+  margin: auto;
+  display: block;
+  max-width: 150px;
+  padding: 16px;
+}
+
+@media screen and (min-width: 525px) {
   .home-content {
     .home-card {
       width: calc(50% - 52px);
@@ -17,7 +25,15 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 800px) {
+  .home-content {
+    .home-card {
+      width: calc(33.33% - 52px);
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
   .home-content {
     .home-card {
       width: calc(25% - 52px);

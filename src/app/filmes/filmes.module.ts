@@ -7,6 +7,8 @@ import { CadastroFilmesComponent } from "./cadastro-filmes/cadastro-filmes.compo
 import { MaterialModule } from "../shared/material/material.module";
 import { ListagemFilmesComponent } from "./listagem-filmes/listagem-filmes.component";
 
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +16,7 @@ import { ListagemFilmesComponent } from "./listagem-filmes/listagem-filmes.compo
     ReactiveFormsModule,
     FormsModule,
     CamposModule,
+    InfiniteScrollModule
   ],
   declarations: [CadastroFilmesComponent, ListagemFilmesComponent],
 })
