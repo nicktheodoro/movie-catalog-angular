@@ -129,6 +129,26 @@
       "urlIMDB": "https://www.imdb.com/title/tt15097216/?ref_=hm_fanfav_tt_i_5_pd_fp1",
       "genero": "Drama",
       "id": 13
+    },
+    {
+      "titulo": "Sem foto e descrição",
+      "urlFoto": "",
+      "dtLancamento": "2021-12-14T03:00:00.000Z",
+      "descricao": "",
+      "nota": 10,
+      "urlIMDB": "",
+      "genero": "Faroeste",
+      "id": 14
+    },
+    {
+      "titulo": "Testando enter na descrição",
+      "urlFoto": "",
+      "dtLancamento": "2021-12-14T03:00:00.000Z",
+      "descricao": "teste.\nteste.\nteste.\nteste.",
+      "nota": 7,
+      "urlIMDB": "",
+      "genero": "Documentário",
+      "id": 15
     }
   ]
 }

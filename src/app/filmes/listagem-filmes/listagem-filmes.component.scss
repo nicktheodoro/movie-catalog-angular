@@ -5,16 +5,34 @@
   justify-content: space-between;
   padding: 10px;
   .home-card {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    mat-card-content {
+      margin-top: 20px;
+      border-top: solid thin;
+    }
+
+    p {
+      margin-top: 10px;
+      min-height: 100px;
+    }
   }
 }
 
+.filtro-listagem {
+  width: calc(100% - 50px);
+}
+
 .mat-card-image {
-  width: auto;
+  margin-top: 20px;
+  width: 212px;
+  height: 298px;
   margin: auto;
   display: block;
-  max-width: 150px;
-  padding: 16px;
 }
 
 @media screen and (min-width: 525px) {
@@ -28,7 +46,7 @@
 @media screen and (min-width: 800px) {
   .home-content {
     .home-card {
-      width: calc(33.33% - 52px);
+      width: calc(33.333% - 52px);
     }
   }
 }
