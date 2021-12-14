@@ -111,44 +111,14 @@
       "id": 11
     },
     {
-      "titulo": " Sem Tempo Para Morrer",
-      "urlFoto": "https://br.web.img3.acsta.net/pictures/19/10/05/16/20/4518067.jpg",
-      "dtLancamento": "2021-04-09T03:00:00.000Z",
-      "descricao": "Bond deixou o serviço, depois de viver em paz por pouco tempo seu velho amigo Felix da CIA precisa da sua ajuda, chevando-lho pelo camino misterioso dum vilão com perigosa tecnologia.",
-      "nota": 7.4,
-      "urlIMDB": "https://www.imdb.com/title/tt2382320/?ref_=hm_fanfav_tt_i_4_pd_fp1",
-      "genero": "Ação",
-      "id": 12
-    },
-    {
       "titulo": "Jai Bhim",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BY2Y5ZWMwZDgtZDQxYy00Mjk0LThhY2YtMmU1MTRmMjVhMjRiXkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_.jpg",
       "dtLancamento": "2021-11-02T03:00:00.000Z",
       "descricao": "Quando um homem tribal é preso por um caso de suposto roubo, sua esposa recorre a um advogado de direitos humanos para ajudá-lo a fazer justiça.",
-      "nota": 9.4,
-      "urlIMDB": "https://www.imdb.com/title/tt15097216/?ref_=hm_fanfav_tt_i_5_pd_fp1",
+      "nota": 10,
+      "urlIMDB": "https://www.imdb.com/title/tt15097216/",
       "genero": "Drama",
       "id": 13
-    },
-    {
-      "titulo": "Sem foto e descrição",
-      "urlFoto": "",
-      "dtLancamento": "2021-12-14T03:00:00.000Z",
-      "descricao": "",
-      "nota": 10,
-      "urlIMDB": "",
-      "genero": "Faroeste",
-      "id": 14
-    },
-    {
-      "titulo": "Testando enter na descrição",
-      "urlFoto": "",
-      "dtLancamento": "2021-12-14T03:00:00.000Z",
-      "descricao": "teste.\nteste.\nteste.\nteste.",
-      "nota": 7,
-      "urlIMDB": "",
-      "genero": "Documentário",
-      "id": 15
     }
   ]
 }
